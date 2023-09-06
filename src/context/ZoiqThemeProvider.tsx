@@ -14,8 +14,10 @@ import { getTheme } from "../utils";
 const ThemeContext = createContext<{
   token: ThemeConfig["token"];
   styleGuideValues: StyleGuideValues;
+  isFetchingTheme: boolean;
 }>({
   token: {},
+  isFetchingTheme: true,
   styleGuideValues: {} as StyleGuideValues,
 });
 
@@ -47,13 +49,17 @@ const ZoiqThemeProvider = ({
     {} as StyleGuideValues
   );
 
+  const [isFetchingTheme, setIsFetchingTheme] = useState(true);
+
   useEffect(() => {
+    setIsFetchingTheme(true);
     fetchTheme(API_KEY).then((data) => {
       if (data && data.length > 0) {
         const { token, styleGuideValues } = getTheme(data);
         setTheme(token);
         setStyleGuideValues(styleGuideValues);
       }
+      setIsFetchingTheme(false);
     });
   }, []);
 
@@ -62,6 +68,7 @@ const ZoiqThemeProvider = ({
       value={{
         token: theme,
         styleGuideValues,
+        isFetchingTheme,
       }}
     >
       {children}
