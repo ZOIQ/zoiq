@@ -1,5 +1,5 @@
-import { StyleGuide, StyleGuideValues } from "../interfaces/index";
 import { ThemeConfig } from "antd";
+import axios from "axios";
 import {
   PropsWithChildren,
   createContext,
@@ -7,8 +7,8 @@ import {
   useEffect,
   useState,
 } from "react";
+import { StyleGuideValues } from "../interfaces/index";
 import { getTheme } from "../utils";
-import axios from "axios";
 
 // create a basic theme context
 const ThemeContext = createContext<{
@@ -69,4 +69,4 @@ const ZoiqThemeProvider = ({
   );
 };
 
-export default ZoiqThemeProvider;
+export { ZoiqThemeProvider };
