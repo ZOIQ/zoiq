@@ -1,3 +1,3 @@
-# About Zoiq
+# About zoiq module
 
-Handle all the theming from client portal. share common functionalities throughout the projects
+This library handles all the theming functionality, Also shares common code throughout different projects
