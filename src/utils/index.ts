@@ -23,10 +23,6 @@ const DEFAULT_COLORS = {
 
 const getTheme = (styleGuideData: StyleGuide[]) => {
   try {
-    console.log(
-      "🚀 ~ file: index.ts:25 ~ getTheme ~ styleGuideData:",
-      styleGuideData
-    );
     const styleGuide: any = {};
 
     styleGuideData.forEach((d) => {

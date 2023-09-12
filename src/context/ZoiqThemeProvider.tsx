@@ -54,7 +54,6 @@ const ZoiqThemeProvider = ({
   useEffect(() => {
     setIsFetchingTheme(true);
     fetchTheme(API_KEY).then((data) => {
-      console.log(data);
       if (data && data.length > 0 && Array.isArray(data)) {
         const { token, styleGuideValues } = getTheme(data);
         setTheme(token);
