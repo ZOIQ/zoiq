@@ -10,30 +10,35 @@ export interface StyleGuideValues {
   fontSizeSubtitle: number;
   fontSizeBody: number;
   fontSizeSmall: number;
+  fontSizeNavbar: number;
 
   fontWeightBanner: number;
   fontWeightTitle: number;
   fontWeightSubtitle: number;
   fontWeightBody: number;
   fontWeightSmall: number;
+  fontWeightNavbar: number;
 
   lineHeightBanner: number;
   lineHeightTitle: number;
   lineHeightSubtitle: number;
   lineHeightBody: number;
   lineHeightSmall: number;
+  lineHeightNavbar: number;
 
   letterSpacingBanner: number;
   letterSpacingTitle: number;
   letterSpacingSubtitle: number;
   letterSpacingBody: number;
   letterSpacingSmall: number;
+  letterSpacingNavbar: number;
 
   textTransformBanner: string;
   textTransformTitle: string;
   textTransformSubtitle: string;
   textTransformBody: string;
   textTransformSmall: string;
+  textTransformNavbar: string;
 
   // Type - Colors
   /**
