@@ -73,7 +73,6 @@ const generateTints = (
     string
   ];
 };
-console.log(generateTints);
 
 
 const getTheme = (styleGuideData: StyleGuide[]) => {

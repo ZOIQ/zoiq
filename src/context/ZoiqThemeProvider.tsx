@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { StyleGuideValues } from "../interfaces/index";
-import { getTheme } from "../utils";
+import { getTheme, generateTints } from "../utils";
 
 // create a basic theme context
 const ThemeContext = createContext<{
@@ -28,6 +28,8 @@ export const useZoiqTheme = () => {
   }
   return context;
 };
+
+
 
 const BASE_THEME_URL =
   "https://zoiqassetsbucket200938-staging.s3.us-east-1.amazonaws.com/public/PROJECT_DATA";
@@ -76,4 +78,4 @@ const ZoiqThemeProvider = ({
   );
 };
 
-export { ZoiqThemeProvider };
+export { ZoiqThemeProvider, generateTints };
