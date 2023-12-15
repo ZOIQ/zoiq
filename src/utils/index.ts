@@ -22,7 +22,7 @@ const DEFAULT_COLORS = {
 };
 
 
-function generateTints(
+const generateTints = (
   color: string
 ): readonly [
   string,
@@ -35,7 +35,7 @@ function generateTints(
   string,
   string,
   string
-] {
+] => {
   let prefix = color.slice(0, 1);
   let hex = color.slice(1);
   let rgb: number[] = [];
@@ -72,7 +72,9 @@ function generateTints(
     string,
     string
   ];
-}
+};
+console.log(generateTints);
+
 
 const getTheme = (styleGuideData: StyleGuide[]) => {
   try {
