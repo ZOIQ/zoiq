@@ -10,6 +10,7 @@ import {
 import { StyleGuideValues } from "../interfaces/index";
 import { getTheme, generateTints } from "../utils";
 
+import { useFonts } from "../hooks/useFonts";
 // create a basic theme context
 const ThemeContext = createContext<{
   token: ThemeConfig["token"];
@@ -78,4 +79,4 @@ const ZoiqThemeProvider = ({
   );
 };
 
-export { ZoiqThemeProvider, generateTints };
+export { ZoiqThemeProvider, generateTints, useFonts };
