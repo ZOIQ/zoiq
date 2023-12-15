@@ -21,6 +21,59 @@ const DEFAULT_COLORS = {
   secondaryWhite: "#C4C4C5",
 };
 
+
+function generateTints(
+  color: string
+): readonly [
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string
+] {
+  let prefix = color.slice(0, 1);
+  let hex = color.slice(1);
+  let rgb: number[] = [];
+  for (let i = 0; i < 3; i++) {
+    let decimal = parseInt(hex.slice(i * 2, (i + 1) * 2), 16); // convert hexadecimal to decimal
+    rgb.push(decimal);
+  }
+
+  let tints = [];
+
+  for (let i = 0; i < 10; i++) {
+    let tint: number[] = rgb.map((val) => {
+      let new_val = Math.floor(val + (255 - val) * (i * 0.1)); // increase brightness by 10%
+      return new_val > 255 ? 255 : new_val; // make sure new value isn't over 255
+    });
+    let tintHex: string = tint
+      .map((val) => {
+        let hex = val.toString(16); // convert decimal to hexadecimal
+        return hex.length === 1 ? "0" + hex : hex; // ensure two digits
+      })
+      .join("");
+    tints.unshift(`${prefix}${tintHex}`); // prepend to get reverse order
+  }
+
+  return tints as unknown as readonly [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string
+  ];
+}
+
 const getTheme = (styleGuideData: StyleGuide[]) => {
   try {
     const styleGuide: any = {};
@@ -67,4 +120,4 @@ const getTheme = (styleGuideData: StyleGuide[]) => {
   }
 };
 
-export { getTheme };
+export { getTheme, generateTints };
