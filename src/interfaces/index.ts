@@ -1,9 +1,15 @@
 import { FormProps } from "antd";
-
+type Size = "xs" | "sm" | "md" | "lg" | "xl";
 export interface StyleGuideValues {
   // Type - Typography
   fontFamilyPrimary: string;
   fontFamilySecondary: string;
+
+  borderRadius: Size;
+
+  listStyleType: string;
+  listStylePosition: string;
+  isListUnorder: string;
 
   fontSizeBanner: number;
   fontSizeTitle: number;
